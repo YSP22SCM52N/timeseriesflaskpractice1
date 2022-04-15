@@ -183,7 +183,8 @@ def github():
 
     # Update your Google cloud deployed LSTM app URL (NOTE: DO NOT REMOVE "/")
     #LSTM_API_URL = "your_lstm_gcloud_url/" + "api/forecast"
-    LSTM_API_URL = "https://timeseriesflaskpractice1-spv7hyaexa-uc.a.run.app/" + "api/forecast"
+    LSTM_API_URL = "https://timeseriesflaskpractice-spv7hyaexa-uc.a.run.app/" + "api/forecast"
+    
 
     '''
     Trigger the LSTM microservice to forecasted the created issues
