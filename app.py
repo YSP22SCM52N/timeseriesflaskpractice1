@@ -58,7 +58,7 @@ def github():
     # Add your own GitHub Token to run it local
     token = os.environ.get(
         'GITHUB_TOKEN', 'your GitHub Token')
-    GITHUB_URL = f"https://api.github.com/"
+    GITHUB_URL = "https://api.github.com/"
     headers = {
         "Authorization": f'token {token}'
     }
