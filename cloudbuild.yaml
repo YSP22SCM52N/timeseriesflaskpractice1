@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/timeseriesflaskpractice/timeseriesflaskpractice', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/timeseriesflaskpractice/timeseriesflaskpractice']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'timeseriesflaskpractice', '--image', 'gcr.io/timeseriesflaskpractice/timeseriesflaskpractice', '--region', 'us-central1', '--platform', 'managed','--port','80']
+images:
+- gcr.io/timeseriesflaskpractice/timeseriesflaskpractice
